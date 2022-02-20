@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">  
+        <link rel="stylesheet" href="index.css">  
+        <title>LitterEater</title>
+    </head>
+    <body>
+        <nav class="topright menu button">
+            <ul></ul>
+            <ul>
+                <li>
+                    <a href="#" onclick="onMenuButton(event);" data-target="main-settings" class="secondary" aria-label="Menu">
+                        <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="48px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <header>
+            <h1 style="text-align: center;">LitterEater</h1>
+        </header>
+        <main class="container">
+            <form>
+                <label id="mainswitch-label" for="mainswitch" aria-busy="true">
+                    <input type="checkbox" role="switch" id="mainswitch" onclick="LE_onToggleEnabled();" />
+                    Enabled (will eat poop automagically)
+                </label>
+            </form>
+            <div class="grid">
+                <a href="/cycle" role="button" class="le-button">&#128169; Eat poop</a>
+                <a href="/empty" role="button" class="le-button">&#127744; Empty all litter</a>
+                <a href="/reset" role="button" class="le-button">&#8634; Reset after emptying</a>
+            </div>
+        </main>
+
+        <dialog id="main-settings"><article>
+            <header>LitterEater settings</header>
+
+            Current status:
+            <h4 id="current-status" aria-busy="true"></h4>
+
+            <form>
+                <label for="hungriness">
+                    Hungriness
+                    <input type="range" min="3" max="10" value="4" id="hungriness" name="hungriness" oninput="this.nextElementSibling.value = this.value">
+                    <span id="hungriness-output">4</span>&nbsp;minutes
+                </label><hr />
+
+                <label for="cycle-overshoot">
+                    Cycle overshoot
+                    <input type="range" min="0" max="20" value="5" id="cycle-overshoot" name="cycle-overshoot" oninput="this.nextElementSibling.value = this.value">
+                    <output id="cycle-overshoot-output">5</output>&nbsp;seconds
+                </label><hr />
+
+                <label for="empty-overshoot">
+                    Empty overshoot
+                    <input type="range" min="0" max="15" value="5" id="empty-overshoot" name="empty-overshoot" oninput="this.nextElementSibling.value = this.value">
+                    <output id="empty-overshoot-output">5</output>&nbsp;seconds
+                </label>
+            </form>
+            <footer>
+                <a href="#cancel"  onclick="onCloseButton(event);"        data-target="main-settings" role="button" class="secondary">Cancel</a>
+                <a href="#confirm" onclick="onSaveAndCloseButton(event);" data-target="main-settings" role="button">Save and close</a>
+            </footer>
+        </article></dialog>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous"></script>
+
+        <script src="index.js"></script>
+    </body>
+</html>

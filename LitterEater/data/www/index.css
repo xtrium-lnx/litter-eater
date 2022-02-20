@@ -1,0 +1,12 @@
+.topright.menu.button
+{
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    text-align: center;
+}
+
+.le-button {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
