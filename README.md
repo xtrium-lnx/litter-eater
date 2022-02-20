@@ -36,6 +36,20 @@ My best rendition of a schematic with MS Paint :
 
 ![LitterEater electronics schematic](electronics.png "LitterEater electronics schematic")
 
+## What's working, what's not
+
+Working :
+ * Over-the-air updating for when I screw around with code / when more features come along
+ * Capture portal to connect it to your home Wifi
+ * Full control over the timings, from the delay before sifting to overshooting endstops (either to make litter horizontal again or to help with dumping)
+ * Makes your fried Litter Robot eat cat poop again :')
+
+To do:
+ * Pinch detection
+ * Drawer full detection
+ * (Maybe) Cat detection depending on weight
+ * Push notifications when your cats go in or when the drawer's full
+
 ## Licensing
 
 This project is licensed under the WTFPL v2 :
